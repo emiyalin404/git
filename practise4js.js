@@ -15,9 +15,7 @@ fetch('./data.json').then(function(response) {          // 直接轉成JSON格�
     let parent = a.parentNode.parentNode              //將超連結標籤的父標籤的父標籤 tr
     parent.remove();                                  //刪除tr標籤     
   })
-
 };
-
   for (let i = 0; i < aa.length; i++) {               
     var tr = document.createElement('tr')               //做出tr
     tbody.appendChild(tr)                               //將tr標籤放入tbody裡面
@@ -28,7 +26,6 @@ fetch('./data.json').then(function(response) {          // 直接轉成JSON格�
     } 
     del(tr);
   }
-
   var btn = document.getElementById('btn');            //按鈕的ID
   var er = document.getElementById('err');            //錯誤訊息的ID
   btn.onclick = function () {                         //點擊按鈕觸發事件
@@ -71,15 +68,7 @@ fetch('./data.json').then(function(response) {          // 直接轉成JSON格�
         td.innerHTML = newdata[i]                     //將新增的內容依序放入td
         tr.appendChild(td)
       }
-      let td = document.createElement('td')           //新增td
-      td.innerHTML = `<a href='javascript:;'>刪除</a>`    //新增刪除的超連結
-      let a = td.children[0]                            //將超連結放入td
-      a.addEventListener('click', () => {               //刪除事件
-        let parent = a.parentNode.parentNode
-        console.log(parent);
-        parent.remove()
-      })
-      tr.appendChild(td)
+      del(tr);
       console.log(tr);
       tbody.appendChild(tr)
     }
