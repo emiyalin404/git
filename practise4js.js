@@ -1,7 +1,10 @@
 fetch('./data.json').then(function(response) {          // 直接轉成JSON格式
     return response.json()
-}).then(function(data) {                                //將JSON文件丟入function執行
-  var aa=(data['data']) 
+}).then(function(data) {                              //將JSON文件丟入function執行
+
+  var aa=(data['data'])
+
+  
   let tbody = document.querySelector('tbody')          //做出一個tbody
   for (let i = 0; i < aa.length; i++) {               
     let tr = document.createElement('tr')               //做出tr
@@ -10,7 +13,7 @@ fetch('./data.json').then(function(response) {          // 直接轉成JSON格�
       let td = document.createElement('td')             //做出一個td
       td.innerHTML = aa[i][key]                         //將JSON文件的每一個值，各別放入td
       tr.appendChild(td)                                //將td標籤放入tr標籤內
-    }
+    } 
     let td = document.createElement('td')               //做出一個td
     td.innerHTML = `<a href='javascript:;'>刪除</a>`    //弄一個刪除的超連結標籤
     let a = td.children[0]                              //將超連結標籤放進td標籤內
