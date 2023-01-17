@@ -1,10 +1,7 @@
 fetch('./data.json').then(function(response) {          // 直接轉成JSON格式
     return response.json()
 }).then(function(data) {                              //將JSON文件丟入function執行
-
   var aa=(data['data'])
-
-  
   let tbody = document.querySelector('tbody')          //做出一個tbody
   for (let i = 0; i < aa.length; i++) {               
     let tr = document.createElement('tr')               //做出tr

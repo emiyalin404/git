@@ -1,0 +1,7 @@
+{
+ "data":[
+    {"number":"1","name":"張三","gender":"男"},
+    {"number":"2","name":"李四","gender":"男"},
+    {"number":"3","name":"王五","gender":"男"}
+   ]
+}
