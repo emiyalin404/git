@@ -1,0 +1,17 @@
+div {
+    text-align: left;
+    display: -webkit-inline-box;
+}
+.dli {
+    text-align: right;
+    width: 235px;
+}
+.dri {
+    text-align: left;
+    width: 700px;
+    display: inline-grid;
+}
+input {
+    display: flex;
+    margin: auto;
+}

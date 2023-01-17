@@ -1,0 +1,16 @@
+  table {
+    border: solid rgb(4, 214, 4);
+    border-collapse: collapse;
+    width: 100%;
+  }
+  table,th,td {
+    border: 1px solid rgb(4, 214, 4);
+  }
+  thead {
+    background-color: rgb(4, 214, 4);
+    color: rgb(255, 255, 255);
+  }
+  .parent {
+    display: flex;
+    justify-content: center;
+  }

@@ -1,0 +1,41 @@
+<head>
+  <style>@import url(practise4cs.css);</style>
+</head>
+<body>
+  <div>
+    <label>編號:</label>
+    <input type="text" id="no" placeholder="請輸入編號" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入編號'">
+    <label>姓名:</label>
+    <input type="text" id="name" placeholder="請輸入姓名" onfocus="this.placeholder=''" onblur="this.placeholder='請輸入姓名'">
+    <label>性別:</label>
+    <select id="gender">
+      <option value="none" selected disabled hidden>-請選擇-</option>
+      <option value="男">男</option>
+      <option value="女">女</option>
+    </select>
+    <input type="button" id="btn" value="加入" />
+    <label>
+      <font color="red" id="err"></font>
+    </label>
+  </div>
+  <div class="parent">
+    <label>學生信息表</label>
+  </div>
+
+  <table border-collapse:collapse;>
+    <thead>
+      <tr>
+        <td>編號</td>
+        <td>姓名</td>
+        <td>性別</td>
+        <td>操作</td>
+      </tr>
+    </thead>
+    <tbody id="list"></tbody>
+  </table>
+<script src="./practise4js.js"></script>
+
+</body>
+
+
+

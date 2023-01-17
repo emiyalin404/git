@@ -1,0 +1,54 @@
+<head>
+         <style>@import url(practise3cs.css);</style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>註冊:</legend>
+            <div>
+                <div class="dli">
+                    <div>
+                        <label for="name">用戶名: </label>
+                        <input type="text" id="name">
+                    </div>
+                    <div>
+                        <label for="pawd"> 密碼: </label>
+                        <input type="password" id="pawd">
+                    </div>
+                    <div>
+                        <label for="email">Email: </label>
+                        <input type="email" id="email">
+                    </div>
+                    <div>
+                        <label for="phone">手機號: </label>
+                        <input type="text" id="phone">
+                    </div>
+                </div>
+                <div class="dri">
+                    <div>
+                        <label>
+                            <font color="red" id="err1"></font>&emsp;6-18個字符,可使用數字,字母,下劃線,需以字母開頭
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <font color="red" id="err2"></font> &emsp;6-18個字符,區分大小寫
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <font color="red" id="err3"></font>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <font color="red" id="err4"></font>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <input type="button" id="btn" value="提交" />
+        </fieldset>
+    </form>
+</body>
+<script src="practise3js.js" /></script>
