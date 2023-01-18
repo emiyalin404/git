@@ -1,30 +1,24 @@
 fetch('./data.json').then(function(response) {          // 直接轉成JSON格式
     return response.json()
-}).then(function(data) {                              //將JSON文件丟入function執行
-
-  var aa=(data['data'])
+}).then(function(data) {                                //將JSON文件丟入function執行
+  var aa=(data['data']) 
   let tbody = document.querySelector('tbody')          //做出一個tbody
-
-  function del(tr){
-    let td = document.createElement('td')               //做出一個td
-  td.innerHTML = `<a href='javascript:;'>刪除</a>`    //將超連結標籤放進td標籤內
-  console.log(td)
-  let a = td.children[0]                              //指派td的子標籤到變數a
-  tr.appendChild(td);                               //將td標籤放入tr標籤內 ->a的td
-  a.addEventListener('click', () => {                 //觸發的事件監聽器
-    let parent = a.parentNode.parentNode              //將超連結標籤的父標籤的父標籤 tr
-    parent.remove();                                  //刪除tr標籤     
-  })
-};
   for (let i = 0; i < aa.length; i++) {               
-    var tr = document.createElement('tr')               //做出tr
-    tbody.appendChild(tr)                               //將tr標籤放入tbody裡面
+    let tr = document.createElement('tr')               //做出tr
+    tbody.appendChild(tr)                                //將tr標籤放入tbody裡面
     for( var key in aa[i]) {
       let td = document.createElement('td')             //做出一個td
       td.innerHTML = aa[i][key]                         //將JSON文件的每一個值，各別放入td
       tr.appendChild(td)                                //將td標籤放入tr標籤內
-    } 
-    del(tr);
+    }
+    let td = document.createElement('td')               //做出一個td
+    td.innerHTML = `<a href='javascript:;'>刪除</a>`    //弄一個刪除的超連結標籤
+    let a = td.children[0]                              //將超連結標籤放進td標籤內
+    a.addEventListener('click', () => {                 //添加一個點擊按鈕時觸發的事件監聽器
+      let parent = a.parentNode.parentNode              //將超連結標籤的父標籤的父標籤 tr
+      parent.remove()                                   //刪除tr標籤
+    })
+    tr.appendChild(td)                                  //將td標籤放入tr標籤內 ---a的td
   }
   var btn = document.getElementById('btn');            //按鈕的ID
   var er = document.getElementById('err');            //錯誤訊息的ID
@@ -68,7 +62,15 @@ fetch('./data.json').then(function(response) {          // 直接轉成JSON格�
         td.innerHTML = newdata[i]                     //將新增的內容依序放入td
         tr.appendChild(td)
       }
-      del(tr);
+      let td = document.createElement('td')           //新增td
+      td.innerHTML = `<a href='javascript:;'>刪除</a>`    //新增刪除的超連結
+      let a = td.children[0]                            //將超連結放入td
+      a.addEventListener('click', () => {               //刪除事件
+        let parent = a.parentNode.parentNode
+        console.log(parent);
+        parent.remove()
+      })
+      tr.appendChild(td)
       console.log(tr);
       tbody.appendChild(tr)
     }
