@@ -9,7 +9,7 @@ fetch('./data.json').then(function(response) {          // 直接轉成JSON格�
     let td = document.createElement('td')               //做出一個td
   td.innerHTML = `<a href='javascript:;'>刪除</a>`    //將超連結標籤放進td標籤內
   console.log(td)
-  let a = td.children[0]                              //
+  let a = td.children[0]                              //指派td的子標籤到變數a
   tr.appendChild(td);                               //將td標籤放入tr標籤內 ->a的td
   a.addEventListener('click', () => {                 //觸發的事件監聽器
     let parent = a.parentNode.parentNode              //將超連結標籤的父標籤的父標籤 tr
